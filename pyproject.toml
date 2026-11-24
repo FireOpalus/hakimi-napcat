@@ -1,0 +1,23 @@
+[project]
+name = "hakimi-napcat"
+version = "1.0.0"
+description = "CN NapCat OneBot v11 deployment templates and legacy voice relay archive"
+requires-python = ">=3.12"
+dependencies = [
+  "websockets>=15,<18",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
